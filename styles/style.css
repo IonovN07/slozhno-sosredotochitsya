@@ -1,5 +1,143 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  padding-inline: var(--page-padding);
+  font-family: var(--main-font);
+  color: var(--accent-color);
+  font-size: var(--fz-body);
+  background-image: url(../images/cover-image-dark.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  display: grid;
+  padding-block: var(--page-padding);
+  grid-template-rows: 1fr min-content 1fr;
+  min-height: 100dvh;
+  position: relative;
+}
+
+
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-color: #ff003c;
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+}
+
+.decorated-zone::before {
+  top: var(--page-padding);
+  border-top-width: 1px;
+  border-right-width: 1px;
+  justify-self: end;
+  align-self: start;
+  
+}
+
+.decorated-zone::after {
+  bottom: var(--page-padding);
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  justify-self: start;
+  align-self: end;
+}
+
+/* .header__decorative-point {
+  position: absolute;
+  top: 0px;
+  right: 48px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+} */
+
+
+/* .header__decorative-point::after {
+  content: '';
+  inline-size: 9px;
+  block-size: 9px;
+  border-radius: 100%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color)
+} */
+
+.header__theme-menu {
+  align-self: center;
+  justify-self: end;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.header__theme-menu-button {
+  display: flex;
+  text-transform: lowercase ;
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-family: inherit;
+  color: var(--accent-color);
+  line-height: 100%;
+  block-size: 26px;
+  outline: none;
+  padding-inline: 13px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  border-color: var(--accent-color);
+}
+
+.header__theme-menu-button:disabled {
+  pointer-events: none;
+}
+
+.header__focus-title {
+  font-weight: var(--fw-bold);
+  font-size: var(--fz-title);
+  line-height: 83%;
+  color: var(--text-accent-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  padding: 0;
+}
+
+.header__accent-description {
+  align-self: center;
+  font-weight: var(--fw-bold);
+  line-height: 130%;
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--text-color-contrast);
+}
+
+.section__title {
+  font-size: inherit;
+}
+
+.card-title{
+  font-size: inherit;
+}
+
+.section__card-tips-title {
+  font-size: inherit;
+  font-size: var(--fz-body);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--text-color-contrast);
+}
+
+

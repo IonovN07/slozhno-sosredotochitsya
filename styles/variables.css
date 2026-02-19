@@ -2,3 +2,23 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+   /* 1. ТИПОГРАФИКА */
+  --main-font: 'IBM Plex mono';
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --fz-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  --fz-body: 18px;
+
+  /* 2. ЦВЕТОВАЯ ПАЛИТРА */
+  --bg-color: #000028;
+  --accent-color: #ff0070;
+  --text-accent-color: #db00ff;
+  --text-color-main: #f1b2ce;
+  --text-color-contrast: #000028;
+  --button-border-color: #ff0070;
+  
+  /* 3. СТРУКТУРА И ОТСТУПЫ */
+  --page-padding: 10px;
+}
