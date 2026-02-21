@@ -8,8 +8,10 @@
   --fw-normal: 400;
   --fw-bold: 700;
 
-  --fz-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   --fz-body: 18px;
+  --lh-small: 83%;
+  --lh-normal: 100%;
+  --lh-big: 130%;
 
   /* 2. ЦВЕТОВАЯ ПАЛИТРА */
   --bg-color: #000028;
@@ -21,4 +23,18 @@
   
   /* 3. СТРУКТУРА И ОТСТУПЫ */
   --page-padding: 10px;
+  --margin-text: 10px;
+
+  --button-gap: 10px;
+  --main-section-gap: 50px;
+  --section-gap: 20px;
+  --cards-gap: 20px;
+  
+}
+
+@media (768px <= width) {
+  :root {
+    --page-padding: 20px;
+    --main-section-gap: 80px;
+  }
 }

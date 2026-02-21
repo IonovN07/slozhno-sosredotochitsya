@@ -21,7 +21,24 @@
   position: relative;
 }
 
+@media (width >= 768px) {
+  .header {
+    grid-template-columns: 1fr 1fr;
+  }
 
+  .header__theme-menu {
+    grid-column: 1 / -1;
+  }
+
+  .header__title {
+    grid-column: 1 / -1;
+  }
+
+  .header__paragraph {
+    grid-column: 2 / -1;
+    grid-row: 3 / -1;
+  }
+}
 
 .decorated-zone::before,
 .decorated-zone::after {
@@ -79,7 +96,18 @@
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: var(--button-gap);
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
 }
 
 .header__theme-menu-button {
@@ -89,7 +117,7 @@
   border: 1px solid transparent;
   font-family: inherit;
   color: var(--accent-color);
-  line-height: 100%;
+  line-height: var(--lh-normal);
   block-size: 26px;
   outline: none;
   padding-inline: 13px;
@@ -104,35 +132,69 @@
   pointer-events: none;
 }
 
-.header__focus-title {
+.header__title {
   font-weight: var(--fw-bold);
-  font-size: var(--fz-title);
-  line-height: 83%;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: var(--lh-small);
   color: var(--text-accent-color);
   text-shadow: 4px 4px 0 var(--accent-color);
-  padding: 0;
+  /* padding: 0; походу не нужен не помню */
 }
 
-.header__accent-description {
+@media (width >= 768px) {
+  .header__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    /* margin-inline-start: -(var(--page-padding)); */
+  }
+}
+
+.header__paragraph {
   align-self: center;
   font-weight: var(--fw-bold);
-  line-height: 130%;
+  line-height: var(--lh-big);
   display: inline-block;
   background-color: var(--accent-color);
   color: var(--text-color-contrast);
 }
 
+.main {
+  display: grid;
+  gap: var(--main-section-gap);
+  padding-block-start: clamp(2.5rem, 1.7777rem + 3.0817vw, 3.75rem);
+}
+
+.section {
+  display: grid;
+  gap: var(--section-gap);
+  /* подумать может быть тогда убрать */
+}
+
 .section__title {
   font-size: inherit;
+  /* margin-block-end: 20px; */
 }
 
-.card-title{
+.section__cards {
+  display: grid;
+  gap: var(--cards-gap);
+}
+
+.card__title {
   font-size: inherit;
 }
 
-.section__card-tips-title {
+.card__paragraph{
   font-size: inherit;
-  font-size: var(--fz-body);
+  line-height: var(--lh-big);
+  margin-block-start: var(--margin-text);
+}
+
+.section__cards-title-tips {
+  font-size: inherit;
+}
+
+.card__title-tip {
+  font-weight: var(--fz-body);
 }
 
 .title-decor {
@@ -140,4 +202,36 @@
   color: var(--text-color-contrast);
 }
 
+
+@media (768px <= width) {
+  .section-why,
+  .section-distractions,
+  .section-tips {
+    outline: 2px solid red;
+    grid-template-columns: 32% 1fr;
+  }
+
+  .section-why__title,
+  .section-distractions__title,
+  .section-tips__title {
+    outline: 2px solid red;
+    grid-column: 1 / 2;
+  }
+
+  .section-why__cards,
+  .section-tips__cards {
+    grid-column: 2 / 3;
+  }
+
+  .section-distractions__cards {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (width >= 1024px) {
+
+  .section-distractions__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
