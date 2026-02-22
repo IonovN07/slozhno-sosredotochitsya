@@ -19,16 +19,18 @@
   --text-accent-color: #db00ff;
   --text-color-main: #f1b2ce;
   --text-color-contrast: #000028;
-  --button-border-color: #ff0070;
+ 
   
   /* 3. СТРУКТУРА И ОТСТУПЫ */
   --page-padding: 10px;
   --margin-text: 10px;
+  --main-padding-end: 40px;
 
   --button-gap: 10px;
   --main-section-gap: 50px;
   --section-gap: 20px;
   --cards-gap: 20px;
+  --images-cards-gap: 10px;
   
 }
 
@@ -36,5 +38,6 @@
   :root {
     --page-padding: 20px;
     --main-section-gap: 80px;
+    --main-padding-end: 60px;
   }
 }
