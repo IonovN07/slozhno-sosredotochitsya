@@ -1,43 +1,47 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+
+
 :root {
    /* 1. ТИПОГРАФИКА */
   --main-font: 'IBM Plex mono';
+  --fz-body: 18px;
   --fw-normal: 400;
   --fw-bold: 700;
 
-  --fz-body: 18px;
   --lh-small: 83%;
   --lh-normal: 100%;
   --lh-big: 130%;
 
   /* 2. ЦВЕТОВАЯ ПАЛИТРА */
-  --bg-color: #000028;
+  --title-text-shadow-color: #ff0070;
+  --basic-decoration-color: #ff0070;
   --accent-color: #ff0070;
-  --text-accent-color: #db00ff;
-  --text-color-main: #f1b2ce;
   --text-color-contrast: #000028;
- 
+  --title-accent-color: #db00ff;
+  --text-color-main: #f1b2ce;
   
   /* 3. СТРУКТУРА И ОТСТУПЫ */
   --page-padding: 10px;
   --margin-text: 10px;
   --main-padding-end: 40px;
-
-  --button-gap: 10px;
-  --main-section-gap: 50px;
-  --section-gap: 20px;
-  --cards-gap: 20px;
-  --images-cards-gap: 10px;
+  --button-padding: 13px;
   
+  --small-gap: 10px;
+  --medium-gap: 20px;
+  --big-gap: 50px;
+  --fixed-gap: 10px;
+
+  /* 4. РАЗМЕРЫ НЕКОТОРЫХ ЭЛЕМЕНТОВ */
+  --nav-button: 26px;
+  --decor-rec: 9px;
+  --decor-corner: 25px;
+  --line-size: 1px;
 }
 
 @media (768px <= width) {
   :root {
     --page-padding: 20px;
-    --main-section-gap: 80px;
     --main-padding-end: 60px;
+    --big-gap: 80px;
+    --small-gap: 20px;
   }
 }
